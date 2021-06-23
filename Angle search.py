@@ -15,6 +15,8 @@ def inputXY(x, z, x1, z1,  server):
     dz = math.fabs(z-z1)
     qt = quadrant(x, z, x1, z1 )
     d = math.sqrt(math.pow(dx,2)+math.pow(dz,2))
+    text =['§e距離=§a{}格§r'.format(float(round(d,2)))]
+    server.execute('tellraw @a ' + json.dumps(text))
     angle = math.atan(weird_division(dx,dz))*180/math.pi
     output(qt,angle,server)
     
